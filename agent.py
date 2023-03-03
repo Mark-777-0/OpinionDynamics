@@ -21,6 +21,11 @@ class Agent:
 		opinionToEspouse=self.opinion
 		opinionTwo = partner.opinion
 
+		#opposite opinions
+		if set([opinionToEspouse,opinionTwo]) == {-1,1} and rand.random() < chanceOfBadInteraction :
+			return True
+		
+
 		if self.opinion == 0:
 			opinionToEspouse = rand.choice([-1,1])
 
@@ -31,11 +36,8 @@ class Agent:
 			partner.opinion = min(1,partner.opinion + 1)
 
 
-		#opposite opinions
-		if set([opinionToEspouse,opinionTwo]) == {-1,1} :
-			return rand.random() < chanceOfBadInteraction
-		else:
-			return False
+
+		return False
 
 
 		

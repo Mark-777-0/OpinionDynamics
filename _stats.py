@@ -41,4 +41,4 @@ for param1 in [dir for dir in os.listdir('opinionData/') if os.path.isdir('opini
 	df_heat = df_heat.append(df)
 
 df_heat = df_heat.sort_values(by=['[' + name1 + ']', '[' + name2 + ']'])
-df_heat.to_csv('opinionData/heatmap.csv', index=False)
+df_heat.to_csv('opinionData/heatmap2.csv', index=False)
